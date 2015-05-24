@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div>
+        <p>
+            Here the dragons...
+        </p>
+    </div>
+<div>
+    {% if categories %}
+        <ul>
+            {% for category in categories %}
+                <li>{{ category.name }}</li>
+                <li>
+                    <a href="/rango/category/{{ category.id }}">{{ category.name }}</a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    {% endif %}
+
+<a href="/rango/add_category/">Add a New Category</a><br />
+<a href="/rango/add_page/">Add a New Page</a><br />
+
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <p>
+        Here the dragons...
+    </p>
+</div>
+<div>
+    <h1>Add a Category</h1>
+
+    <div>
+        <form id="category" method="post" action="rango/add_page.html">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}
+            {% endfor %}
+            <input type="submit" name="submit" value="Create Page"/>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
